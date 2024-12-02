@@ -1,0 +1,26 @@
+{
+    "name": "lms-workspace",
+    "$schema": "node_modules/nx/schemas/project-schema.json",
+    "targets": {
+      "serve-all": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "nx serve lms-frontend",
+            "nx serve api"
+          ],
+          "parallel": true
+        }
+      },
+      "build-all": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "nx build lms-frontend --configuration=production",
+            "nx build api --configuration=production"
+          ],
+          "parallel": false
+        }
+      }
+    }
+  }
